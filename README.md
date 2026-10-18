@@ -6,15 +6,20 @@ TVBox / FongMi / 影视仓 订阅的**自动检测 + 自动拼装**。每天跑�
 
 ## 三个订阅地址
 
-部署后（GitHub Pages，从 `/docs` 发布）：
+部署在 GitHub Pages（从 `/docs` 发布），当前实例：
 
 | 产物 | 地址 | 给谁用 |
 |---|---|---|
-| **多仓聚合** | `https://<user>.github.io/juhe-subhub/merged.json` | 影视仓 / 支持多仓的 TVBox。`{"urls":[...]}`，含自动发现的源 |
-| **多仓精选** | `https://<user>.github.io/juhe-subhub/merged-manual.json` | 同上，但**只含人工种子**，不受自动发现影响 |
-| **单仓配置** | `https://<user>.github.io/juhe-subhub/tvbox.json` | FongMi / 原生 TVBox。合并成一份完整配置，主源 jar 已选定 |
+| **多仓聚合** | `https://ofind.cn/juhe-subhub/merged.json` | 影视仓 / 支持多仓的 TVBox。`{"urls":[...]}`，含自动发现的源 |
+| **多仓精选** | `https://ofind.cn/juhe-subhub/merged-manual.json` | 同上，但**只含人工种子**，不受自动发现影响 |
+| **单仓配置** | `https://ofind.cn/juhe-subhub/tvbox.json` | FongMi / 原生 TVBox。合并成一份完整配置，主源 jar 已选定 |
 
-面板：`https://<user>.github.io/juhe-subhub/`
+面板：`https://ofind.cn/juhe-subhub/`
+
+> 这个账号的 Pages 配了自定义域名 `ofind.cn`，所以 `zhuzhuyule.github.io/juhe-subhub/...`
+> 会 **301 到 `http://ofind.cn/...`**（跳转后会掉到 http）。TVBox 会跟重定向，能用，
+> 但请直接用 `https://ofind.cn` 开头的地址，少一跳、也不降级到明文。
+> 换账号部署时把 `PAGES_BASE` 仓库变量改成自己的地址即可（workflow 会读它）。
 
 **为什么是两个多仓**：`feed` 类源是每轮从父订阅里自动 diff 出来的，作者改一次你的列表就变一次。
 想要稳定集合的人用精选版，想尽量全的人用聚合版。数据都来自同一个 `state/sources.json`。

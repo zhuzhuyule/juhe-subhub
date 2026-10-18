@@ -37,7 +37,12 @@ jobs:
       - name: Run one round
         run: |
           REPO="${{ github.repository }}"
-          BASE="https://${REPO%%/*}.github.io/${REPO##*/}"
+          # 账号级 Pages 自定义域名会让 <user>.github.io 301 到别处(这里是 ofind.cn),
+          # 所以真实地址放在仓库变量里; 没设才退回 github.io 拼法
+          BASE="${{ vars.PAGES_BASE }}"
+          if [ -z "$BASE" ]; then
+            BASE="https://${REPO%%/*}.github.io/${REPO##*/}"
+          fi
           echo "面板地址: $BASE"
           python run_once.py --deep --play --workers 8 --timeout 12 --base-url "$BASE"
 
