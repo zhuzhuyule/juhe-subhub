@@ -1,4 +1,4 @@
-# tvbox-subhub
+# juhe-subhub
 
 TVBox / FongMi / 影视仓 订阅的**自动检测 + 自动拼装**。每天跑一轮，产出一页可读的体检面板和三个可直接用的订阅地址。
 
@@ -10,11 +10,11 @@ TVBox / FongMi / 影视仓 订阅的**自动检测 + 自动拼装**。每天跑�
 
 | 产物 | 地址 | 给谁用 |
 |---|---|---|
-| **多仓聚合** | `https://<user>.github.io/tvbox-subhub/merged.json` | 影视仓 / 支持多仓的 TVBox。`{"urls":[...]}`，含自动发现的源 |
-| **多仓精选** | `https://<user>.github.io/tvbox-subhub/merged-manual.json` | 同上，但**只含人工种子**，不受自动发现影响 |
-| **单仓配置** | `https://<user>.github.io/tvbox-subhub/tvbox.json` | FongMi / 原生 TVBox。合并成一份完整配置，主源 jar 已选定 |
+| **多仓聚合** | `https://<user>.github.io/juhe-subhub/merged.json` | 影视仓 / 支持多仓的 TVBox。`{"urls":[...]}`，含自动发现的源 |
+| **多仓精选** | `https://<user>.github.io/juhe-subhub/merged-manual.json` | 同上，但**只含人工种子**，不受自动发现影响 |
+| **单仓配置** | `https://<user>.github.io/juhe-subhub/tvbox.json` | FongMi / 原生 TVBox。合并成一份完整配置，主源 jar 已选定 |
 
-面板：`https://<user>.github.io/tvbox-subhub/`
+面板：`https://<user>.github.io/juhe-subhub/`
 
 **为什么是两个多仓**：`feed` 类源是每轮从父订阅里自动 diff 出来的，作者改一次你的列表就变一次。
 想要稳定集合的人用精选版，想尽量全的人用聚合版。数据都来自同一个 `state/sources.json`。
@@ -149,7 +149,7 @@ python3 run_once.py --deep --play --workers 8   # 完整一轮（含试播，约
 python3 run_once.py --deep                      # 跳过试播，约 1 分钟
 python3 run_once.py --strict                    # 未检测过的源不进订阅
 python3 run_once.py --out /tmp/site --no-feeds
-python3 run_once.py --base-url https://u.github.io/tvbox-subhub
+python3 run_once.py --base-url https://u.github.io/juhe-subhub
 ```
 
 `--base-url` 会把部署后的绝对地址写进面板的订阅地址框（也可用环境变量 `SUBHUB_BASE_URL`）。
