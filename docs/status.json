@@ -1,19 +1,19 @@
 {
- "generated_at": 1792325915,
- "generated_at_str": "2026-10-18 20:18:35",
- "elapsed_sec": 213.0,
+ "generated_at": 1792328905,
+ "generated_at_str": "2026-10-18 21:08:25",
+ "elapsed_sec": 198.2,
  "deep": true,
  "stats": {
   "total": 26,
-  "ok": 23,
+  "ok": 22,
   "unreachable": 2,
   "degraded": 1,
   "user_ok": 2,
-  "merged": 23,
-  "merged_manual": 20,
+  "merged": 22,
+  "merged_manual": 19,
   "sites": 208,
   "lives": 46,
-  "playable": 8
+  "playable": 7
  },
  "tvbox_stats": {
   "master": "饭太硬备用 #2",
@@ -35,31 +35,34 @@
    "url": "http://www.饭太硬.net/tv",
    "kind": "manual",
    "origin": null,
+   "added_at": null,
    "sort_order": 1,
    "enabled": true,
    "user_ok": true,
    "last_ok": 1,
-   "fail_streak": 0,
-   "degraded": false,
-   "last_ts": 1792325797,
+   "last_ts": 1792328800,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
+   "fail_streak": 0,
+   "degraded": false,
    "sites": 49,
    "lives": 6,
    "jar": "3c60a3e44d582b5a74fd",
-   "ms": 22374,
+   "ms": 16376,
+   "play": {
+    "ok": null,
+    "note": "未能离机验证(抽 3 站均非可探点播接口): 📚儿童┃启蒙=接口ERR:TimeoutError; 🐯虎牙┃直播=非点播接口; 🐟斗鱼┃直播=接口ERR:TimeoutError"
+   },
    "spark": [
+    1,
+    1,
     1,
     1,
     1,
     1,
     1
    ],
-   "uptime": 100,
-   "play": {
-    "ok": null,
-    "note": "未能离机验证(抽 3 站均非可探点播接口): 📚儿童┃启蒙=接口ERR:TimeoutError; 🐯虎牙┃直播=接口ERR:TimeoutError; 🐟斗鱼┃直播=接口ERR:TimeoutError"
-   }
+   "uptime": 100
   },
   {
    "id": 1,
@@ -67,31 +70,34 @@
    "url": "http://www.饭太硬.cc/tv",
    "kind": "manual",
    "origin": null,
+   "added_at": null,
    "sort_order": 3,
    "enabled": true,
    "user_ok": true,
    "last_ok": 1,
-   "fail_streak": 0,
-   "degraded": false,
-   "last_ts": 1792325797,
+   "last_ts": 1792328800,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
+   "fail_streak": 0,
+   "degraded": false,
    "sites": 49,
    "lives": 6,
    "jar": "3c60a3e44d582b5a74fd",
-   "ms": 22592,
+   "ms": 26823,
+   "play": {
+    "ok": null,
+    "note": "未能离机验证(抽 3 站均非可探点播接口): 📚儿童┃启蒙=非点播接口; 🐯虎牙┃直播=非点播接口; 🐟斗鱼┃直播=接口ERR:TimeoutError"
+   },
    "spark": [
+    1,
+    1,
     1,
     1,
     1,
     1,
     1
    ],
-   "uptime": 100,
-   "play": {
-    "ok": null,
-    "note": "未能离机验证(抽 3 站均非可探点播接口): 📚儿童┃启蒙=接口ERR:URLError; 🐯虎牙┃直播=接口ERR:TimeoutError; 🐟斗鱼┃直播=接口ERR:TimeoutError"
-   }
+   "uptime": 100
   },
   {
    "id": 3,
@@ -99,20 +105,27 @@
    "url": "http://www.y456y.com",
    "kind": "manual",
    "origin": null,
+   "added_at": null,
    "sort_order": 2,
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "fail_streak": 0,
-   "degraded": false,
-   "last_ts": 1792325797,
+   "last_ts": 1792328800,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
+   "fail_streak": 0,
+   "degraded": false,
    "sites": 97,
    "lives": 1,
    "jar": "443240978_2_17921566",
-   "ms": 1148,
+   "ms": 1391,
+   "play": {
+    "ok": null,
+    "note": "无可离机探测站点(全部依赖 jar, 需 App 内验)"
+   },
    "spark": [
+    1,
+    1,
     1,
     1,
     1,
@@ -127,11 +140,7 @@
     1,
     1
    ],
-   "uptime": 100,
-   "play": {
-    "ok": null,
-    "note": "无可离机探测站点(全部依赖 jar, 需 App 内验)"
-   }
+   "uptime": 100
   },
   {
    "id": 4,
@@ -139,20 +148,27 @@
    "url": "http://new.王二小放牛娃.top",
    "kind": "manual",
    "origin": null,
+   "added_at": null,
    "sort_order": 4,
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "fail_streak": 0,
-   "degraded": false,
-   "last_ts": 1792325797,
+   "last_ts": 1792328800,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
+   "fail_streak": 0,
+   "degraded": false,
    "sites": 99,
    "lives": 2,
    "jar": "5e08f8d3205a77afbac8",
-   "ms": 7823,
+   "ms": 14538,
+   "play": {
+    "ok": null,
+    "note": "无可离机探测站点(全部依赖 jar, 需 App 内验)"
+   },
    "spark": [
+    1,
+    1,
     1,
     1,
     1,
@@ -167,11 +183,7 @@
     1,
     1
    ],
-   "uptime": 100,
-   "play": {
-    "ok": null,
-    "note": "无可离机探测站点(全部依赖 jar, 需 App 内验)"
-   }
+   "uptime": 100
   },
   {
    "id": 5,
@@ -179,20 +191,27 @@
    "url": "http://肥猫.net/",
    "kind": "manual",
    "origin": null,
+   "added_at": null,
    "sort_order": 5,
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "fail_streak": 0,
-   "degraded": false,
-   "last_ts": 1792325797,
+   "last_ts": 1792328800,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
+   "fail_streak": 0,
+   "degraded": false,
    "sites": 40,
    "lives": 1,
    "jar": "spider.php",
-   "ms": 15709,
+   "ms": 15438,
+   "play": {
+    "ok": null,
+    "note": "无可离机探测站点(全部依赖 jar, 需 App 内验)"
+   },
    "spark": [
+    1,
+    1,
     1,
     1,
     1,
@@ -207,11 +226,7 @@
     1,
     1
    ],
-   "uptime": 100,
-   "play": {
-    "ok": null,
-    "note": "无可离机探测站点(全部依赖 jar, 需 App 内验)"
-   }
+   "uptime": 100
   },
   {
    "id": 6,
@@ -219,20 +234,30 @@
    "url": "http://xhztv.top/4k.json",
    "kind": "manual",
    "origin": null,
+   "added_at": null,
    "sort_order": 6,
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "fail_streak": 0,
-   "degraded": false,
-   "last_ts": 1792325797,
+   "last_ts": 1792328800,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
+   "fail_streak": 0,
+   "degraded": false,
    "sites": 53,
    "lives": 2,
    "jar": "fan.txt",
-   "ms": 1563,
+   "ms": 2568,
+   "play": {
+    "ok": true,
+    "site": "🎥┃量子┃资源",
+    "title": "一觉醒来坐拥神装和飞船，我决定以买一套独门独户的房子为目标作为佣兵自由地活下去",
+    "media": "https://v.lzcdn31.com/20261004/12356_f246e9e2/index.m3u8",
+    "note": "流: h264,video,aac,audio,h264,video"
+   },
    "spark": [
+    1,
+    1,
     1,
     1,
     1,
@@ -247,14 +272,7 @@
     1,
     1
    ],
-   "uptime": 100,
-   "play": {
-    "ok": true,
-    "site": "🎥┃量子┃资源",
-    "title": "极道寿司次郎！",
-    "media": "https://v.lzcdn31.com/20261004/12354_be6628b3/index.m3u8",
-    "note": "流: h264,video,aac,audio,h264,video"
-   }
+   "uptime": 100
   },
   {
    "id": 7,
@@ -262,20 +280,30 @@
    "url": "https://ys.cxkjg.cn/api/provide/tvbox",
    "kind": "manual",
    "origin": null,
+   "added_at": null,
    "sort_order": 7,
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "fail_streak": 0,
-   "degraded": false,
-   "last_ts": 1792325797,
+   "last_ts": 1792328800,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
+   "fail_streak": 0,
+   "degraded": false,
    "sites": 12,
    "lives": 0,
    "jar": "-",
-   "ms": 4114,
+   "ms": 5750,
+   "play": {
+    "ok": true,
+    "site": "🌟 创享影视",
+    "title": "无间兄弟情",
+    "media": "https://hd.kuktxu.com/play/dG69KP8b/index.m3u8",
+    "note": "流: h264,video,aac,audio,h264,video"
+   },
    "spark": [
+    1,
+    1,
     1,
     1,
     1,
@@ -290,14 +318,7 @@
     1,
     1
    ],
-   "uptime": 100,
-   "play": {
-    "ok": true,
-    "site": "🌟 创享影视",
-    "title": "无间兄弟情",
-    "media": "https://hd.kuktxu.com/play/dG69KP8b/index.m3u8",
-    "note": "流: h264,video,aac,audio,h264,video"
-   }
+   "uptime": 100
   },
   {
    "id": 8,
@@ -305,20 +326,30 @@
    "url": "http://124.71.19.220/c/1",
    "kind": "manual",
    "origin": null,
+   "added_at": null,
    "sort_order": 8,
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "fail_streak": 0,
-   "degraded": false,
-   "last_ts": 1792325797,
+   "last_ts": 1792328800,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
+   "fail_streak": 0,
+   "degraded": false,
    "sites": 38,
    "lives": 3,
    "jar": "spider.jar?g=none&v=",
-   "ms": 11338,
+   "ms": 17042,
+   "play": {
+    "ok": true,
+    "site": "🍀┃非凡┃资源",
+    "title": "伟大的长征",
+    "media": "https://super.ffzy-online6.com/20261010/42924_c4c99ae0/index.m3u8",
+    "note": "流: h264,video,aac,audio,h264,video"
+   },
    "spark": [
+    1,
+    1,
     1,
     1,
     1,
@@ -333,14 +364,7 @@
     1,
     1
    ],
-   "uptime": 100,
-   "play": {
-    "ok": true,
-    "site": "🍀┃非凡┃资源",
-    "title": "伟大的长征",
-    "media": "https://super.ffzy-online6.com/20261010/42924_c4c99ae0/index.m3u8",
-    "note": "流: h264,video,aac,audio,h264,video"
-   }
+   "uptime": 100
   },
   {
    "id": 9,
@@ -348,20 +372,30 @@
    "url": "https://raw.liucn.cc/box/m.json",
    "kind": "manual",
    "origin": null,
+   "added_at": null,
    "sort_order": 9,
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "fail_streak": 0,
-   "degraded": false,
-   "last_ts": 1792325797,
+   "last_ts": 1792328800,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
+   "fail_streak": 0,
+   "degraded": false,
    "sites": 234,
    "lives": 3,
    "jar": "fty.jar",
-   "ms": 3691,
+   "ms": 6170,
+   "play": {
+    "ok": true,
+    "site": "🦊火狐采集",
+    "title": "法律与秩序：特殊受害者第二十八季",
+    "media": "https://play.hhuus.com/play/e73nWjGe/index.m3u8",
+    "note": "流: h264,video,aac,audio,h264,video"
+   },
    "spark": [
+    1,
+    1,
     1,
     1,
     1,
@@ -376,14 +410,7 @@
     1,
     1
    ],
-   "uptime": 100,
-   "play": {
-    "ok": true,
-    "site": "🥑┃量子┃资源",
-    "title": "极道寿司次郎！",
-    "media": "https://v.lzcdn31.com/20261004/12354_be6628b3/index.m3u8",
-    "note": "流: h264,video,aac,audio,h264,video"
-   }
+   "uptime": 100
   },
   {
    "id": 10,
@@ -391,20 +418,30 @@
    "url": "https://szyyds.cn/tv/x.json",
    "kind": "manual",
    "origin": null,
+   "added_at": null,
    "sort_order": 10,
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "fail_streak": 0,
-   "degraded": false,
-   "last_ts": 1792325797,
+   "last_ts": 1792328800,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
+   "fail_streak": 0,
+   "degraded": false,
    "sites": 62,
    "lives": 10,
    "jar": "x.jpg",
-   "ms": 8092,
+   "ms": 12325,
+   "play": {
+    "ok": true,
+    "site": "影视 | 电影天堂",
+    "title": "极道寿司次郎！",
+    "media": "https://vip.dytt-tvs.com/20261004/39808_a9a80dd4/index.m3u8",
+    "note": "流: h264,video,aac,audio,h264,video"
+   },
    "spark": [
+    1,
+    1,
     1,
     1,
     1,
@@ -419,14 +456,7 @@
     1,
     1
    ],
-   "uptime": 100,
-   "play": {
-    "ok": true,
-    "site": "影视 | 电影天堂",
-    "title": "请记住我的名字",
-    "media": "https://play.phimgood.com/20260914/31200_eb22f88f/index.m3u8",
-    "note": "流: h264,video,aac,audio,h264,video"
-   }
+   "uptime": 100
   },
   {
    "id": 11,
@@ -434,20 +464,27 @@
    "url": "http://xhztv.top/xhz",
    "kind": "manual",
    "origin": null,
+   "added_at": null,
    "sort_order": 11,
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "fail_streak": 0,
-   "degraded": false,
-   "last_ts": 1792325797,
+   "last_ts": 1792328800,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
+   "fail_streak": 0,
+   "degraded": false,
    "sites": 54,
    "lives": 1,
    "jar": "Yoursmile.jar",
-   "ms": 5965,
+   "ms": 6821,
+   "play": {
+    "ok": null,
+    "note": "未能离机验证(抽 4 站均非可探点播接口): 🐯虎牙直播=非点播接口; 🐠斗鱼直播=非点播接口; 有声小说吧=非点播接口"
+   },
    "spark": [
+    1,
+    1,
     1,
     1,
     1,
@@ -462,11 +499,7 @@
     1,
     1
    ],
-   "uptime": 100,
-   "play": {
-    "ok": null,
-    "note": "未能离机验证(抽 4 站均非可探点播接口): 🐯虎牙直播=非点播接口; 🐠斗鱼直播=非点播接口; 有声小说吧=非点播接口"
-   }
+   "uptime": 100
   },
   {
    "id": 12,
@@ -474,20 +507,27 @@
    "url": "http://xhztv.top/dc",
    "kind": "manual",
    "origin": null,
+   "added_at": null,
    "sort_order": 12,
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "fail_streak": 0,
-   "degraded": false,
-   "last_ts": 1792325797,
+   "last_ts": 1792328800,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
+   "fail_streak": 0,
+   "degraded": false,
    "sites": null,
    "lives": null,
    "jar": "-",
-   "ms": 850,
+   "ms": 1327,
+   "play": {
+    "ok": null,
+    "note": "无可离机探测站点(全部依赖 jar, 需 App 内验)"
+   },
    "spark": [
+    1,
+    1,
     1,
     1,
     1,
@@ -502,51 +542,7 @@
     1,
     1
    ],
-   "uptime": 100,
-   "play": {
-    "ok": null,
-    "note": "无可离机探测站点(全部依赖 jar, 需 App 内验)"
-   }
-  },
-  {
-   "id": 13,
-   "name": "拾光多仓",
-   "url": "http://xmbjm.fh4u.org/dc.txt",
-   "kind": "manual",
-   "origin": null,
-   "sort_order": 13,
-   "enabled": true,
-   "user_ok": false,
-   "last_ok": 1,
-   "fail_streak": 0,
-   "degraded": false,
-   "last_ts": 1792325797,
-   "last_verdict": "✓ 有效",
-   "last_unreachable": false,
-   "sites": null,
-   "lives": null,
-   "jar": "-",
-   "ms": 528,
-   "spark": [
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1
-   ],
-   "uptime": 100,
-   "play": {
-    "ok": null,
-    "note": "无可离机探测站点(全部依赖 jar, 需 App 内验)"
-   }
+   "uptime": 100
   },
   {
    "id": 14,
@@ -554,20 +550,27 @@
    "url": "http://ztha.top/TVBox/GYCK.json",
    "kind": "manual",
    "origin": null,
+   "added_at": null,
    "sort_order": 14,
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "fail_streak": 0,
-   "degraded": false,
-   "last_ts": 1792325797,
+   "last_ts": 1792328800,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
+   "fail_streak": 0,
+   "degraded": false,
    "sites": null,
    "lives": null,
    "jar": "-",
-   "ms": 634,
+   "ms": 662,
+   "play": {
+    "ok": null,
+    "note": "无可离机探测站点(全部依赖 jar, 需 App 内验)"
+   },
    "spark": [
+    1,
+    1,
     1,
     1,
     1,
@@ -582,11 +585,7 @@
     1,
     1
    ],
-   "uptime": 100,
-   "play": {
-    "ok": null,
-    "note": "无可离机探测站点(全部依赖 jar, 需 App 内验)"
-   }
+   "uptime": 100
   },
   {
    "id": 15,
@@ -594,20 +593,30 @@
    "url": "https://gh-proxy.com/raw.githubusercontent.com/yw88075/tvbox/main/yw.json",
    "kind": "manual",
    "origin": null,
+   "added_at": null,
    "sort_order": 15,
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "fail_streak": 0,
-   "degraded": false,
-   "last_ts": 1792325797,
+   "last_ts": 1792328800,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
+   "fail_streak": 0,
+   "degraded": false,
    "sites": 151,
    "lives": 1,
    "jar": "HeChengChaXiu.jar",
-   "ms": 5652,
+   "ms": 10457,
+   "play": {
+    "ok": true,
+    "site": "❤非凡资源",
+    "title": "伟大的长征",
+    "media": "https://super.ffzy-online6.com/20261010/42924_c4c99ae0/index.m3u8",
+    "note": "流: h264,video,aac,audio,h264,video"
+   },
    "spark": [
+    1,
+    1,
     1,
     1,
     1,
@@ -622,14 +631,7 @@
     1,
     1
    ],
-   "uptime": 100,
-   "play": {
-    "ok": true,
-    "site": "❤非凡资源",
-    "title": "伟大的长征",
-    "media": "https://super.ffzy-online6.com/20261010/42924_c4c99ae0/index.m3u8",
-    "note": "流: h264,video,aac,audio,h264,video"
-   }
+   "uptime": 100
   },
   {
    "id": 16,
@@ -637,20 +639,30 @@
    "url": "https://gh-proxy.com/raw.githubusercontent.com//gaotianliuyun/gao/master/0827.json",
    "kind": "manual",
    "origin": null,
+   "added_at": null,
    "sort_order": 16,
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "fail_streak": 0,
-   "degraded": false,
-   "last_ts": 1792325797,
+   "last_ts": 1792328800,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
+   "fail_streak": 0,
+   "degraded": false,
    "sites": 33,
    "lives": 0,
    "jar": "custom_spider.jar",
-   "ms": 11546,
+   "ms": 23188,
+   "play": {
+    "ok": true,
+    "site": "量子",
+    "title": "一觉醒来坐拥神装和飞船，我决定以买一套独门独户的房子为目标作为佣兵自由地活下去",
+    "media": "https://v.lzcdn31.com/20261004/12356_f246e9e2/index.m3u8",
+    "note": "流: h264,video,aac,audio,h264,video"
+   },
    "spark": [
+    1,
+    1,
     1,
     1,
     1,
@@ -665,14 +677,7 @@
     1,
     1
    ],
-   "uptime": 100,
-   "play": {
-    "ok": true,
-    "site": "量子",
-    "title": "极道寿司次郎！",
-    "media": "https://v.lzcdn31.com/20261004/12354_be6628b3/index.m3u8",
-    "note": "流: h264,video,aac,audio,h264,video"
-   }
+   "uptime": 100
   },
   {
    "id": 17,
@@ -680,20 +685,27 @@
    "url": "https://gh-proxy.com/raw.githubusercontent.com/gaotianliuyun/gao/master/js.json",
    "kind": "manual",
    "origin": null,
+   "added_at": null,
    "sort_order": 17,
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "fail_streak": 0,
-   "degraded": false,
-   "last_ts": 1792325797,
+   "last_ts": 1792328800,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
+   "fail_streak": 0,
+   "degraded": false,
    "sites": 298,
    "lives": 2,
    "jar": "pg.jar",
-   "ms": 6519,
+   "ms": 7603,
+   "play": {
+    "ok": null,
+    "note": "无可离机探测站点(全部依赖 jar, 需 App 内验)"
+   },
    "spark": [
+    1,
+    1,
     1,
     1,
     1,
@@ -708,11 +720,7 @@
     1,
     1
    ],
-   "uptime": 100,
-   "play": {
-    "ok": null,
-    "note": "无可离机探测站点(全部依赖 jar, 需 App 内验)"
-   }
+   "uptime": 100
   },
   {
    "id": 18,
@@ -720,20 +728,27 @@
    "url": "https://gh-proxy.com/raw.githubusercontent.com/gaotianliuyun/gao/master/XYQ.json",
    "kind": "manual",
    "origin": null,
+   "added_at": null,
    "sort_order": 18,
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "fail_streak": 0,
-   "degraded": false,
-   "last_ts": 1792325797,
+   "last_ts": 1792328800,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
+   "fail_streak": 0,
+   "degraded": false,
    "sites": 49,
    "lives": 2,
    "jar": "XYQ.jar",
-   "ms": 5045,
+   "ms": 6674,
+   "play": {
+    "ok": null,
+    "note": "未能离机验证(抽 7 站均非可探点播接口): 奇珍异兽[j=非点播接口; 优酷[js]=非点播接口; 腾云驾雾[j=非点播接口"
+   },
    "spark": [
+    1,
+    1,
     1,
     1,
     1,
@@ -748,11 +763,7 @@
     1,
     1
    ],
-   "uptime": 100,
-   "play": {
-    "ok": null,
-    "note": "未能离机验证(抽 7 站均非可探点播接口): 奇珍异兽[j=非点播接口; 优酷[js]=非点播接口; 腾云驾雾[j=非点播接口"
-   }
+   "uptime": 100
   },
   {
    "id": 19,
@@ -760,20 +771,27 @@
    "url": "https://gitlab.com/noimank/tvbox/-/raw/main/tvbox1.json",
    "kind": "manual",
    "origin": null,
+   "added_at": null,
    "sort_order": 19,
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "fail_streak": 0,
-   "degraded": false,
-   "last_ts": 1792325797,
+   "last_ts": 1792328800,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
+   "fail_streak": 0,
+   "degraded": false,
    "sites": 64,
    "lives": 1,
    "jar": "candymuj.jar",
-   "ms": 7680,
+   "ms": 7962,
+   "play": {
+    "ok": null,
+    "note": "未能离机验证(抽 12 站均非可探点播接口): 💥短剧网=非点播接口; 💥爱看=非点播接口; 💥厂长=非点播接口"
+   },
    "spark": [
+    1,
+    1,
     1,
     1,
     1,
@@ -788,11 +806,7 @@
     1,
     1
    ],
-   "uptime": 100,
-   "play": {
-    "ok": null,
-    "note": "未能离机验证(抽 12 站均非可探点播接口): 💥短剧网=非点播接口; 💥爱看=非点播接口; 💥厂长=非点播接口"
-   }
+   "uptime": 100
   },
   {
    "id": 20,
@@ -800,19 +814,24 @@
    "url": "https://gh-proxy.com/https://raw.githubusercontent.com/yoursmile66/TVBox/main/XC.json",
    "kind": "manual",
    "origin": null,
+   "added_at": null,
    "sort_order": 20,
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "fail_streak": 0,
-   "degraded": false,
-   "last_ts": 1792325797,
+   "last_ts": 1792328800,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
+   "fail_streak": 0,
+   "degraded": false,
    "sites": 85,
    "lives": 1,
    "jar": "Yoursmile.jar",
-   "ms": 6995,
+   "ms": 3214,
+   "play": {
+    "ok": null,
+    "note": "未能离机验证(抽 1 站均非可探点播接口): 📚酷我听书=非点播接口"
+   },
    "spark": [
     0,
     0,
@@ -826,13 +845,11 @@
     1,
     1,
     1,
+    1,
+    1,
     1
    ],
-   "uptime": 77,
-   "play": {
-    "ok": null,
-    "note": "未能离机验证(抽 1 站均非可探点播接口): 📚酷我听书=非点播接口"
-   }
+   "uptime": 80
   },
   {
    "id": 25,
@@ -840,16 +857,27 @@
    "url": "https://clun.top/box.json",
    "kind": "feed",
    "origin": "noimank聚合",
+   "added_at": null,
    "sort_order": 21,
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "fail_streak": 0,
-   "degraded": false,
-   "last_ts": 1792325797,
+   "last_ts": 1792328800,
    "last_verdict": "✓ 有效(DoH 直连复验)",
    "last_unreachable": false,
+   "fail_streak": 0,
+   "degraded": false,
+   "sites": 100,
+   "lives": 17,
+   "jar": "xs.jar",
+   "ms": 71456,
+   "play": {
+    "ok": null,
+    "note": "配置不可解析(拉取失败(ERR:TimeoutError))"
+   },
    "spark": [
+    1,
+    1,
     1,
     1,
     1,
@@ -861,18 +889,7 @@
     1,
     1
    ],
-   "uptime": 100,
-   "sites": 100,
-   "lives": 17,
-   "jar": "xs.jar",
-   "ms": 74316,
-   "play": {
-    "ok": true,
-    "site": "量子 | 采集",
-    "title": "极道寿司次郎！",
-    "media": "https://v.lzcdn31.com/20261004/12354_be6628b3/index.m3u8",
-    "note": "流: h264,video,aac,audio,h264,video"
-   }
+   "uptime": 100
   },
   {
    "id": 27,
@@ -880,20 +897,27 @@
    "url": "https://gh-proxy.org/https:/raw.githubusercontent.com/xyq254245/xyqonlinerule/main/XYQTVBox.json",
    "kind": "feed",
    "origin": "noimank聚合",
+   "added_at": null,
    "sort_order": 22,
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "fail_streak": 0,
-   "degraded": false,
-   "last_ts": 1792325797,
+   "last_ts": 1792328800,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
+   "fail_streak": 0,
+   "degraded": false,
    "sites": 48,
    "lives": 3,
    "jar": "custom_spider.jar",
-   "ms": 4514,
+   "ms": 2759,
+   "play": {
+    "ok": null,
+    "note": "未能离机验证(抽 9 站均非可探点播接口): 🍊柚子资源=接口ERR:URLError; 奇珍异兽[j=非点播接口; 优酷[js]=非点播接口"
+   },
    "spark": [
+    1,
+    1,
     1,
     1,
     1,
@@ -908,11 +932,7 @@
     1,
     1
    ],
-   "uptime": 100,
-   "play": {
-    "ok": null,
-    "note": "未能离机验证(抽 9 站均非可探点播接口): 🍊柚子资源=接口ERR:URLError; 奇珍异兽[j=非点播接口; 优酷[js]=非点播接口"
-   }
+   "uptime": 100
   },
   {
    "id": 34,
@@ -920,19 +940,24 @@
    "url": "https://www.wya6.cn/tv/yc.json",
    "kind": "feed",
    "origin": "noimank聚合",
+   "added_at": null,
    "sort_order": 26,
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "fail_streak": 0,
-   "degraded": false,
-   "last_ts": 1792325797,
+   "last_ts": 1792328800,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
+   "fail_streak": 0,
+   "degraded": false,
    "sites": 4,
    "lives": 1,
    "jar": "wyz.php",
-   "ms": 1544,
+   "ms": 2521,
+   "play": {
+    "ok": null,
+    "note": "未能离机验证(抽 1 站均非可探点播接口): 此版作废，去=非点播接口"
+   },
    "spark": [
     0,
     0,
@@ -946,13 +971,54 @@
     1,
     0,
     0,
+    1,
+    1,
     1
    ],
-   "uptime": 62,
+   "uptime": 67
+  },
+  {
+   "id": 13,
+   "name": "拾光多仓",
+   "url": "http://xmbjm.fh4u.org/dc.txt",
+   "kind": "manual",
+   "origin": null,
+   "added_at": null,
+   "sort_order": 13,
+   "enabled": true,
+   "user_ok": false,
+   "last_ok": 0,
+   "last_ts": 1792328800,
+   "last_verdict": "✗ 失效(HTTP 502)",
+   "last_unreachable": false,
+   "fail_streak": 1,
+   "degraded": false,
+   "sites": null,
+   "lives": null,
+   "jar": "-",
+   "ms": 10269,
    "play": {
     "ok": null,
-    "note": "未能离机验证(抽 1 站均非可探点播接口): 此版作废，去=非点播接口"
-   }
+    "note": "无可离机探测站点(全部依赖 jar, 需 App 内验)"
+   },
+   "spark": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0
+   ],
+   "uptime": 93
   },
   {
    "id": 28,
@@ -960,15 +1026,16 @@
    "url": "http://pandown.pro/tvbox/tvbox.json",
    "kind": "feed",
    "origin": "noimank聚合",
+   "added_at": null,
    "sort_order": 23,
    "enabled": true,
    "user_ok": false,
    "last_ok": null,
-   "fail_streak": 0,
-   "degraded": false,
-   "last_ts": 1792325797,
+   "last_ts": 1792328800,
    "last_verdict": "⚠ 本机不可达(RemoteDisconnected)",
    "last_unreachable": true,
+   "fail_streak": 0,
+   "degraded": false,
    "spark": [],
    "uptime": null
   },
@@ -978,24 +1045,25 @@
    "url": "http://tv.nxog.top/m/",
    "kind": "feed",
    "origin": "noimank聚合",
+   "added_at": null,
    "sort_order": 24,
    "enabled": true,
    "user_ok": false,
    "last_ok": 0,
-   "fail_streak": 2,
-   "degraded": false,
-   "last_ts": 1792325797,
+   "last_ts": 1792328800,
    "last_verdict": "⚠ 本机不可达(RemoteDisconnected)",
    "last_unreachable": true,
+   "fail_streak": 2,
+   "degraded": false,
+   "sites": null,
+   "lives": null,
+   "jar": "-",
+   "ms": 503,
    "spark": [
     0,
     0
    ],
-   "uptime": 0,
-   "sites": null,
-   "lives": null,
-   "jar": "-",
-   "ms": 503
+   "uptime": 0
   },
   {
    "id": 32,
@@ -1003,20 +1071,23 @@
    "url": "http://www.lyyytv.cn/yt/yt.json",
    "kind": "feed",
    "origin": "noimank聚合",
+   "added_at": null,
    "sort_order": 25,
    "enabled": true,
    "user_ok": false,
    "last_ok": 0,
-   "fail_streak": 11,
-   "degraded": true,
-   "last_ts": 1792325797,
+   "last_ts": 1792328800,
    "last_verdict": "✗ 失效(HTTP 404)",
    "last_unreachable": false,
+   "fail_streak": 13,
+   "degraded": true,
    "sites": null,
    "lives": null,
    "jar": "-",
-   "ms": 475,
+   "ms": 148,
    "spark": [
+    0,
+    0,
     0,
     0,
     0,
@@ -1110,6 +1181,18 @@
   {
    "ts": 1792325866,
    "ok": 23,
+   "total": 26,
+   "unreachable": 2
+  },
+  {
+   "ts": 1792328650,
+   "ok": 23,
+   "total": 26,
+   "unreachable": 2
+  },
+  {
+   "ts": 1792328863,
+   "ok": 22,
    "total": 26,
    "unreachable": 2
   }

@@ -10,10 +10,12 @@
   python3 run_once.py --deep --workers 6
   python3 run_once.py --out /tmp/site --strict # 严格模式: 未检测过的源不进订阅
 
-状态文件（都在 state/ 下，可直接手改并提交）:
-  sources.json  [{id,name,url,kind,origin,sort_order,enabled,user_ok,last_ok,...}]
-  feeds.json    [{name,url,enabled}]
-  history.jsonl 每行一轮: {ts,total,ok,unreachable,items:[...]}
+状态文件（都在 state/ 下, 按「谁写」拆分, 每个文件只有一个写者）:
+  sources.json    机器只 append  [{id,name,url,kind,origin,added_at}]
+  overrides.json  只有人写         {url: {sort_order,enabled,user_ok}}
+  results.json    只有机器写       {url: {last_ok,last_verdict,play,...}}
+  feeds.json      只有人写         [{name,url,enabled}]
+  history.jsonl   只有机器写       每行一轮: {ts,total,ok,unreachable,items:[...]}
 """
 import argparse
 import concurrent.futures
@@ -52,6 +54,57 @@ def save_json(path, obj):
     os.replace(tmp, path)
 
 
+# ---------------- 状态三分：每个文件只有一个写者 ----------------
+# 之前所有东西都塞在 sources.json 里, 机器每轮整份重写, 人手改的 sort_order/enabled
+# 会跟机器写的 last_ok 混在同一个 diff 里, 冲突和误覆盖都从这里来。
+# 现在按「谁写」拆开, 冲突面归零:
+#
+#   sources.json    机器 append 新源(id/name/url/kind/origin/added_at), 不删不改
+#   overrides.json  只有人写 —— 顺序、启停、置顶全在这
+#   results.json    只有机器写 —— 检测结果、试播
+#   history.jsonl   只有机器写 —— 每轮汇总
+
+CFG_FIELDS = ("id", "name", "url", "kind", "origin", "added_at")
+OV_FIELDS = ("sort_order", "enabled", "user_ok")
+RES_FIELDS = ("last_ok", "last_ts", "last_verdict", "last_unreachable",
+              "fail_streak", "degraded", "http", "type", "sites", "lives",
+              "parses", "jar", "ms", "play")
+
+DEFAULTS = {"sort_order": None, "enabled": True, "user_ok": False}
+
+
+def load_state():
+    """三份文件合成一份运行时视图: 身份 + 人工覆盖 + 上次结果。"""
+    srcs = load_json(os.path.join(STATE_DIR, "sources.json"), [])
+    if not srcs:
+        srcs = bootstrap_from_db()
+    ov = load_json(os.path.join(STATE_DIR, "overrides.json"), {})
+    res = load_json(os.path.join(STATE_DIR, "results.json"), {})
+    out = []
+    for s in srcs:
+        d = dict(s)
+        o = ov.get(s["url"]) or {}
+        d["sort_order"] = o.get("sort_order")
+        if d["sort_order"] is None:
+            d["sort_order"] = s.get("id") or 0      # 没排过的按加入顺序
+        d["enabled"] = o.get("enabled", True)
+        d["user_ok"] = bool(o.get("user_ok", False))
+        for k in RES_FIELDS:
+            if k in (res.get(s["url"]) or {}):
+                d[k] = res[s["url"]][k]
+        out.append(d)
+    return out
+
+
+def save_state(sources):
+    """写回两份机器文件。overrides.json 一个字节都不碰。"""
+    save_json(os.path.join(STATE_DIR, "sources.json"),
+              [{k: s.get(k) for k in CFG_FIELDS} for s in sources])
+    save_json(os.path.join(STATE_DIR, "results.json"),
+              {s["url"]: {k: s[k] for k in RES_FIELDS if k in s} for s in sources})
+
+
+
 def bootstrap_from_db():
     """state/sources.json 不存在但本地有 subhub.db 时, 从库里导出一次。"""
     dbp = os.path.join(HERE, "subhub.db")
@@ -71,7 +124,10 @@ def bootstrap_from_db():
                     "enabled": bool(s.get("enabled", 1)),
                     "user_ok": bool(s.get("user_ok", 0)),
                     "last_ok": None, "fail_streak": 0, "degraded": False})
-    save_json(os.path.join(STATE_DIR, "sources.json"), out)
+    save_state(out)
+    # 顺序/启停/置顶属于人工文件, 迁移时一并落成 overrides.json
+    save_json(os.path.join(STATE_DIR, "overrides.json"),
+              {s["url"]: {k: s[k] for k in OV_FIELDS if k in s} for s in out})
     if feeds:
         save_json(os.path.join(STATE_DIR, "feeds.json"),
                   [{"name": f["name"], "url": f["url"], "enabled": bool(f.get("enabled", 1))}
@@ -86,7 +142,6 @@ def sync_feeds(sources, feeds, timeout=20):
     """拉取每个固定资源, 新 URL 入队。返回新增数。"""
     known = {s["url"] for s in sources}
     next_id = max([s.get("id") or 0 for s in sources] + [0]) + 1
-    next_sort = max([s.get("sort_order") or 0 for s in sources] + [0]) + 1
     added = 0
     for f in feeds:
         if not f.get("enabled", True):
@@ -106,12 +161,9 @@ def sync_feeds(sources, feeds, timeout=20):
                 continue
             sources.append({"id": next_id, "name": (name or url[:24]), "url": url,
                             "kind": "feed", "origin": f.get("name"),
-                            "sort_order": next_sort, "enabled": True,
-                            "user_ok": False, "last_ok": None,
-                            "fail_streak": 0, "degraded": False})
+                            "added_at": int(time.time())})
             known.add(url)
             next_id += 1
-            next_sort += 1
             n += 1
         added += n
         print("  [feed] %s → 新增 %d 条" % (f.get("name"), n))
@@ -239,10 +291,7 @@ def main():
     args = ap.parse_args()
 
     t0 = time.time()
-    sources_path = os.path.join(STATE_DIR, "sources.json")
-    sources = load_json(sources_path, [])
-    if not sources:
-        sources = bootstrap_from_db()
+    sources = load_state()
     if not sources:
         print("没有源: 请先准备 state/sources.json")
         return 1
@@ -351,7 +400,7 @@ def main():
     with open(os.path.join(args.out, "index.html"), "w", encoding="utf-8") as f:
         f.write(html)
 
-    save_json(sources_path, sources)
+    save_state(sources)
     print("== 产物: %s" % args.out)
     print("   merged.json %d 条 | merged-manual.json %d 条 | tvbox.json %s | 耗时 %.1fs"
           % (len(merged["urls"]), len(merged_manual["urls"]),

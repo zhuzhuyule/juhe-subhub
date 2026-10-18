@@ -1,0 +1,82 @@
+{
+ "http://www.饭太硬.net/tv": {
+  "sort_order": 1,
+  "user_ok": true
+ },
+ "http://www.y456y.com": {
+  "sort_order": 2
+ },
+ "http://www.饭太硬.cc/tv": {
+  "sort_order": 3,
+  "user_ok": true
+ },
+ "http://new.王二小放牛娃.top": {
+  "sort_order": 4
+ },
+ "http://肥猫.net/": {
+  "sort_order": 5
+ },
+ "http://xhztv.top/4k.json": {
+  "sort_order": 6
+ },
+ "https://ys.cxkjg.cn/api/provide/tvbox": {
+  "sort_order": 7
+ },
+ "http://124.71.19.220/c/1": {
+  "sort_order": 8
+ },
+ "https://raw.liucn.cc/box/m.json": {
+  "sort_order": 9
+ },
+ "https://szyyds.cn/tv/x.json": {
+  "sort_order": 10
+ },
+ "http://xhztv.top/xhz": {
+  "sort_order": 11
+ },
+ "http://xhztv.top/dc": {
+  "sort_order": 12
+ },
+ "http://xmbjm.fh4u.org/dc.txt": {
+  "sort_order": 13
+ },
+ "http://ztha.top/TVBox/GYCK.json": {
+  "sort_order": 14
+ },
+ "https://gh-proxy.com/raw.githubusercontent.com/yw88075/tvbox/main/yw.json": {
+  "sort_order": 15
+ },
+ "https://gh-proxy.com/raw.githubusercontent.com//gaotianliuyun/gao/master/0827.json": {
+  "sort_order": 16
+ },
+ "https://gh-proxy.com/raw.githubusercontent.com/gaotianliuyun/gao/master/js.json": {
+  "sort_order": 17
+ },
+ "https://gh-proxy.com/raw.githubusercontent.com/gaotianliuyun/gao/master/XYQ.json": {
+  "sort_order": 18
+ },
+ "https://gitlab.com/noimank/tvbox/-/raw/main/tvbox1.json": {
+  "sort_order": 19
+ },
+ "https://gh-proxy.com/https://raw.githubusercontent.com/yoursmile66/TVBox/main/XC.json": {
+  "sort_order": 20
+ },
+ "https://clun.top/box.json": {
+  "sort_order": 21
+ },
+ "https://gh-proxy.org/https:/raw.githubusercontent.com/xyq254245/xyqonlinerule/main/XYQTVBox.json": {
+  "sort_order": 22
+ },
+ "http://pandown.pro/tvbox/tvbox.json": {
+  "sort_order": 23
+ },
+ "http://tv.nxog.top/m/": {
+  "sort_order": 24
+ },
+ "http://www.lyyytv.cn/yt/yt.json": {
+  "sort_order": 25
+ },
+ "https://www.wya6.cn/tv/yc.json": {
+  "sort_order": 26
+ }
+}

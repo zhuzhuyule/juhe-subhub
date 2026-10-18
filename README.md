@@ -169,22 +169,53 @@ docker compose up -d --build      # restart: unless-stopped
 `Dockerfile` 是 `python:3.13-slim`，零依赖无 pip install。DB 通过 `SUBHUB_DB=/data/subhub.db`
 放挂载卷。compose 与 env 已验证，**镜像构建未验证**（本机 daemon 当时未启动）。
 
-## 手改 state
+## 手改 state：每个文件只有一个写者
 
-Action 模式没有界面，但所有开关都是 `state/` 下的普通 JSON，改完提交即生效：
+Action 模式没有界面，所有控制都在 `state/` 下的普通 JSON 里。关键设计是**按「谁写」拆文件**，
+而不是把所有东西塞进一份：
+
+| 文件 | 谁写 | 内容 |
+|---|---|---|
+| `sources.json` | 机器（只 append） | 源身份：`id / name / url / kind / origin / added_at` |
+| `overrides.json` | **只有人** | 顺序、启停、置顶 |
+| `results.json` | 只有机器 | 每源最近一次检测结果、试播结果 |
+| `history.jsonl` | 只有机器 | 每轮汇总，保留 120 轮 |
+| `feeds.json` | **只有人** | 固定资源（父订阅页） |
+
+为什么这么拆：以前全在一份 `sources.json` 里，机器每轮整份重写，你手改的 `sort_order`
+会跟机器写的 `last_ok` 混进同一个 diff，冲突和误覆盖都从这里来。拆开之后
+**机器永远不碰 `overrides.json`，你的改动不可能被覆盖**。
+
+### 控制顺序 / 启停 / 置顶
+
+只改 `state/overrides.json`，键是源的 URL：
 
 ```jsonc
-// state/sources.json
 {
-  "name": "某源",
-  "sort_order": 1,     // 档内排序权重（同档才比大小）
-  "enabled": true,     // false = 停用，不进订阅
-  "user_ok": true      // 人工确认：永不降级 + 置顶 + 强制进订阅
+  "http://www.饭太硬.net/tv": { "sort_order": 1, "user_ok": true },
+  "https://clun.top/box.json": { "sort_order": 50 },
+  "http://pandown.pro/tvbox/tvbox.json": { "enabled": false }
 }
 ```
 
-- `feeds.json` — 固定资源（父订阅页），每轮自动 diff 出新源
-- `history.jsonl` — 每轮一行，保留最近 120 轮。被作废的记录保留 `invalidated` 字段说明原因
+- `sort_order` — **档内**排序权重（档位由检测结论决定，见上面「排序规则」）。
+  不写就按加入顺序（`id`）排。
+- `enabled: false` — 停用，不进订阅，也不检测
+- `user_ok: true` — 人工确认：永不降级 + 置顶 + 强制进订阅
+
+新源由 feed 自动 append 到 `sources.json`，不会出现在 `overrides.json` 里 ——
+想给它排位置，自己加一条。
+
+### 手动加源
+
+`state/sources.json` 追加一条即可（`id` 取当前最大值 +1）：
+
+```jsonc
+{ "id": 27, "name": "某源", "url": "https://example.com/tv.json",
+  "kind": "manual", "origin": null, "added_at": 1792330000 }
+```
+
+然后到 `overrides.json` 给它一个 `sort_order`（可选）。
 
 ## 诊断工具
 
