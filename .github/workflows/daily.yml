@@ -1,0 +1,54 @@
+name: daily
+
+on:
+  schedule:
+    # 每天 00:00 北京时间（UTC 16:00）。GitHub cron 可能延迟 5~20 分钟。
+    - cron: "0 16 * * *"
+  workflow_dispatch: {}        # 也支持手动触发
+
+permissions:
+  contents: write              # 把产物提交回仓库
+
+concurrency:
+  group: subhub-daily
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      # ffprobe 有则用它确认音视频流；没有也能跑（只校验 m3u8 可读）
+      - name: Ensure ffprobe
+        run: |
+          if ! command -v ffprobe >/dev/null 2>&1; then
+            sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          fi
+          ffprobe -version | head -1 || echo "no ffprobe, 只做 m3u8 可读校验"
+
+      # 单轮 worker：同步固定资源 → 检测 → 试播 → 生成订阅与静态面板
+      # 零依赖（纯标准库），不需要 pip install
+      - name: Run one round
+        run: |
+          REPO="${{ github.repository }}"
+          BASE="https://${REPO%%/*}.github.io/${REPO##*/}"
+          echo "面板地址: $BASE"
+          python run_once.py --deep --play --workers 8 --timeout 12 --base-url "$BASE"
+
+      - name: Commit outputs
+        run: |
+          git config user.name  "subhub-bot"
+          git config user.email "subhub-bot@users.noreply.github.com"
+          git add state docs
+          if git diff --cached --quiet; then
+            echo "本轮无变化，跳过提交"
+          else
+            git commit -m "chore: $(date -u '+%Y-%m-%d %H:%M') 自动更新"
+            git push
+          fi

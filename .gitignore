@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# 本机常驻模式才会产生的运行时数据
+subhub.db
+subhub.db-wal
+subhub.db-shm
+*.log
+data/
+
+# 修改前的本地备份
+state/*.bak-*

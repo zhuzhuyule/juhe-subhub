@@ -1,0 +1,12 @@
+services:
+  subhub:
+    build: .
+    container_name: subhub
+    restart: unless-stopped
+    ports:
+      - "8765:8765"
+    volumes:
+      - ./data:/data
+    environment:
+      - SUBHUB_DB=/data/subhub.db
+      - SUBHUB_PORT=8765

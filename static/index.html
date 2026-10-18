@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
+<title>subhub — TVBox 订阅工作台</title>
+<style>
+:root{
+  --bg:#f5f6f8; --card:#ffffff; --line:#e4e7ec; --txt:#1f2329; --sub:#6b7280;
+  --ok:#16a34a; --okbg:#eaf7ef; --warn:#d97706; --warnbg:#fdf3e3;
+  --bad:#dc2626; --badbg:#fdecec; --unk:#6b7280; --unkbg:#f0f1f3;
+  --acc:#2563eb; --accbg:#eaf1fe;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);
+  font:14px/1.55 -apple-system,BlinkMacSystemFont,"PingFang SC","Segoe UI",sans-serif}
+header{background:var(--card);border-bottom:1px solid var(--line);
+  padding:12px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+header h1{font-size:16px;margin:0}
+header .sub{color:var(--sub);font-size:12px}
+header .sp{flex:1}
+.btn{background:var(--acc);color:#fff;border:0;border-radius:6px;padding:7px 14px;
+  font-size:13px;cursor:pointer}
+.btn.ghost{background:#fff;color:var(--txt);border:1px solid var(--line)}
+.btn:disabled{opacity:.5;cursor:default}
+.wrap{max-width:1180px;margin:18px auto;padding:0 16px;display:grid;gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.card h2{font-size:14px;margin:0 0 10px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.stat b{font-size:22px;display:block}
+.stat span{color:var(--sub);font-size:12px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{color:var(--sub);font-weight:500;text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)}
+td{padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:middle}
+tr:last-child td{border-bottom:0}
+tr.dis{opacity:.45}
+.badge{display:inline-block;padding:1px 8px;border-radius:99px;font-size:12px;white-space:nowrap}
+.b-user{background:#ede9fe;color:#5b21b6}
+.b-ok{background:var(--okbg);color:var(--ok)}
+.b-warn{background:var(--warnbg);color:var(--warn)}
+.b-bad{background:var(--badbg);color:var(--bad)}
+.b-unk{background:var(--unkbg);color:var(--unk)}
+.b-deg{background:#f3e8ff;color:#7c3aed}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
+.sub2{color:var(--sub);font-size:12px}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+input[type=text],input[type=number],select{background:#fff;border:1px solid var(--line);
+  border-radius:6px;padding:7px 10px;font-size:13px;color:var(--txt)}
+input[type=text]{flex:1;min-width:260px}
+.spark{display:block}
+.tabs{display:flex;gap:6px}
+.tabs button{background:#fff;border:1px solid var(--line);border-radius:99px;
+  padding:5px 14px;font-size:13px;cursor:pointer;color:var(--sub)}
+.tabs button.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.log{font-family:ui-monospace,Menlo,monospace;font-size:12px;max-height:180px;
+  overflow:auto;background:#fafbfc;border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+.log div{padding:1px 0;white-space:pre-wrap}
+.log .warn{color:var(--warn)} .log .error{color:var(--bad)}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px 18px}
+.kv .k{color:var(--sub);font-size:12px}
+.kv .v{font-size:13px;margin-bottom:6px}
+.copybox{display:flex;gap:8px}
+.copybox input{font-size:12px}
+.hide{display:none}
+.tip{color:var(--sub);font-size:12px;margin-top:6px}
+</style>
+</head>
+<body>
+<header>
+  <h1>📡 subhub</h1>
+  <span class="sub">TVBox 订阅工作台 · 自动发现 / 定时检测 / 合并生成</span>
+  <span class="sp"></span>
+  <span class="sub" id="sched"></span>
+  <span class="sub" id="net-tip" style="color:#b45309"></span>
+  <button class="btn" id="btn-check">立即检测全部</button>
+  <button class="btn ghost" id="btn-sync">同步固定资源</button>
+</header>
+
+<div class="wrap">
+  <div class="stats" id="stats"></div>
+
+  <div class="card">
+    <div class="row" style="justify-content:space-between">
+      <h2>订阅源</h2>
+      <div class="tabs">
+        <button data-f="all" class="on">全部</button>
+        <button data-f="ok">有效</button>
+        <button data-f="bad">异常</button>
+        <button data-f="feed">来自资源</button>
+        <button data-f="manual">手动</button>
+      </div>
+    </div>
+    <div style="overflow:auto">
+    <table>
+      <thead><tr>
+        <th>排序</th><th>名称</th><th>地址</th><th>状态</th><th>规模</th><th>jar</th>
+        <th>可用率</th><th>最近</th><th>来源</th><th></th>
+      </tr></thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    </div>
+    <div class="tip" id="emptytip"></div>
+  </div>
+
+  <div class="card">
+    <h2>添加源</h2>
+    <div class="row">
+      <input type="text" id="in-name" placeholder="名称（可选）" style="max-width:200px;flex:0">
+      <input type="text" id="in-url" placeholder="订阅地址，如 http://xxx.tv 或 https://xxx/box.json">
+      <button class="btn" id="btn-add">添加</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>固定资源（自动发现订阅）</h2>
+    <table><thead><tr><th>名称</th><th>地址</th><th>上次同步</th><th>发现/新增</th><th></th></tr></thead>
+    <tbody id="feeds"></tbody></table>
+    <div class="row" style="margin-top:10px">
+      <input type="text" id="feed-url" placeholder="父订阅/资源页地址（JSON 聚合页或文章页均可）" style="flex:0;flex:1;min-width:320px">
+      <button class="btn ghost" id="btn-feed">添加并同步</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>订阅生成</h2>
+    <div class="kv">
+      <div>
+        <div class="k">① 多仓聚合订阅（juhe 格式，只含检测通过的源，按上方排序输出）</div>
+        <div class="copybox">
+          <input type="text" id="merged-url" readonly>
+          <button class="btn ghost" id="btn-copy">复制</button>
+        </div>
+        <div class="row" style="margin-top:6px">
+          <span class="sub2">范围：</span>
+          <select id="merged-kind">
+            <option value="">全部通过源</option>
+            <option value="feed">仅固定资源来的</option>
+            <option value="manual">仅手动添加的</option>
+          </select>
+          <span class="sub2" id="merged-count"></span>
+        </div>
+      </div>
+      <div>
+        <div class="k">② 单仓 tvbox 配置（合并为一个配置；主源的 spider jar 是唯一可用的）</div>
+        <div class="copybox">
+          <input type="text" id="single-url" readonly>
+          <button class="btn ghost" id="btn-copy2">复制</button>
+        </div>
+        <div class="row" style="margin-top:6px">
+          <span class="sub2">主源：</span>
+          <select id="set-single_master" style="max-width:200px"></select>
+          <span class="sub2">含直播</span><select id="set-single_lives"><option value="1">是</option><option value="0">否</option></select>
+          <span class="sub2">含解析</span><select id="set-single_parses"><option value="1">是</option><option value="0">否</option></select>
+          <button class="btn ghost" id="btn-single-stats">统计</button>
+        </div>
+        <div class="tip" id="single-stats"></div>
+      </div>
+    </div>
+    <div class="tip">TVBox/FongMi 填①得到可切换的源列表；填②得到一个整合好的单配置（跨源只并入非 csp 点播站，其余源的 csp 站点因 jar 不兼容会被丢弃，统计里可见）。</div>
+  </div>
+
+  <div class="card">
+    <h2>调度与检测设置</h2>
+    <div class="kv" id="settings"></div>
+  </div>
+
+  <div class="card">
+    <h2>运行日志</h2>
+    <div class="log" id="logs"></div>
+  </div>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+let S = {sources:[],feeds:[],settings:{},logs:[],scheduler:{}};
+let filter = "all";
+
+async function api(path, method, body){
+  const r = await fetch(path, {
+    method: method||"GET",
+    headers: body?{"Content-Type":"application/json"}:{},
+    body: body?JSON.stringify(body):undefined
+  });
+  return r.json();
+}
+
+function fmtAgo(ts){
+  if(!ts) return "—";
+  const d = Date.now()/1000 - ts;
+  if(d < 60) return Math.max(0,d|0)+"秒前";
+  if(d < 3600) return (d/60|0)+"分钟前";
+  if(d < 86400) return (d/3600|0)+"小时前";
+  return new Date(ts*1000).toLocaleDateString();
+}
+function badge(v, degraded){
+  if(degraded) return '<span class="badge b-deg">降级</span> ';
+  if(!v) return '<span class="badge b-unk">未检</span>';
+  if(v.startsWith("✓")) return '<span class="badge b-ok">有效</span>';
+  if(v.startsWith("✗")) return '<span class="badge b-bad">失效</span>';
+  if(v.startsWith("⚠")) return '<span class="badge b-warn">需复测</span>';
+  return '<span class="badge b-unk">待App验</span>';
+}
+function spark(checks){
+  if(!checks || !checks.length) return "—";
+  const c = checks.slice(0,20).reverse();
+  const cells = c.map(x=>'<rect x="0" y="0" width="7" height="14" rx="1.5" fill="'+
+    (x.ok?"#16a34a":"#dc2626")+'"/>').map((r,i)=>r.replace('x="0"',`x="${i*9}"`)).join("");
+  return '<svg class="spark" width="'+(c.length*9)+'" height="14">'+cells+'</svg>';
+}
+
+function render(){
+  const srcs = S.sources;
+  const ok = srcs.filter(s=>s.last_ok===1 || s.user_ok===1).length - 0;
+  const bad = srcs.filter(s=>s.degraded && !s.user_ok).length;
+  const unk = srcs.filter(s=>s.last_ok===null && !s.user_ok).length;
+  const confirmed = srcs.filter(s=>s.user_ok===1).length;
+  const feeds = S.feeds.length;
+  $("#stats").innerHTML = [
+    [srcs.length,"订阅源总数"],[ok,"当前有效"],[bad,"已降级"],
+    [unk,"未检测"],[feeds,"固定资源"],[confirmed,"👤用户确认"]
+  ].map(([n,t])=>'<div class="stat"><b>'+n+'</b><span>'+t+'</span></div>').join("");
+
+  $("#sched").textContent = S.scheduler.busy ? "⏳ 检测中…" :
+    (S.scheduler.last_run ? "上次检测 "+fmtAgo(S.scheduler.last_run) : "等待首轮");
+
+  let list = srcs.filter(s=>{
+    if(filter==="ok") return (s.last_ok===1 || s.user_ok===1) && !s.degraded;
+    if(filter==="bad") return (s.degraded || s.last_ok===0) && !s.user_ok;
+    if(filter==="feed") return s.kind==="feed";
+    if(filter==="manual") return s.kind!=="feed";
+    return true;
+  });
+  $("#emptytip").textContent = list.length? "" : "该分类下暂无源";
+  $("#tbody").innerHTML = list.map((s,i)=>{
+    const lc = (s.checks||[])[0]||{};
+    return '<tr class="'+(s.enabled?"":"dis")+'">'+
+      '<td style="white-space:nowrap">'+
+        '<button class="btn ghost" style="padding:1px 7px" onclick="move('+s.id+',-1)" title="上移">↑</button>'+
+        '<button class="btn ghost" style="padding:1px 7px" onclick="move('+s.id+',1)" title="下移">↓</button>'+
+      '</td>'+
+      '<td>'+esc(s.name||"—")+'</td>'+
+      '<td class="mono" style="max-width:300px;overflow:hidden;text-overflow:ellipsis" title="'+esc(s.url)+'">'+esc(s.url)+'</td>'+
+      '<td>'+badge(lc.verdict, s.degraded)+(s.enabled?"":' <span class="badge b-unk">已停用</span>')+
+        (s.user_ok===1?' <span class="badge b-user" title="用户在 App 中验证可用, 已覆盖检测结论">👤 确认可用</span>':"")+'</td>'+
+      '<td class="sub2">'+(lc.sites!=null?("站"+lc.sites):"—")+
+        (lc.lives?(" · 直播"+lc.lives):"")+'</td>'+
+      '<td class="mono sub2">'+esc(lc.jar||"—")+'</td>'+
+      '<td>'+spark(s.checks)+' <span class="sub2">'+(s.uptime==null?"":s.uptime+"%")+
+        (s.user_ok===1?" 👤":"")+'</span></td>'+
+      '<td class="sub2">'+fmtAgo(lc.ts)+'</td>'+
+      '<td class="sub2">'+(s.kind==="feed"?esc(s.origin||"feed"):"手动")+'</td>'+
+      '<td style="white-space:nowrap">'+
+        '<button class="btn ghost" onclick="checkOne('+s.id+')">检</button> '+
+        '<button class="btn ghost" onclick="override('+s.id+','+(s.user_ok===1?0:1)+')" title="在 TVBox/影视仓里能正常加载就点这个，检测结论不再覆盖它。注意：影视仓会静默回退到本地缓存，先清缓存（或换个地址）再验证才算数">'+(s.user_ok===1?"取消确认":"👤认")+'</button> '+
+        '<button class="btn ghost" onclick="toggle('+s.id+','+(s.enabled?0:1)+')">'+(s.enabled?"停":"启")+'</button> '+
+        '<button class="btn ghost" onclick="del('+s.id+')">删</button>'+
+      '</td></tr>';
+  }).join("");
+
+  $("#feeds").innerHTML = S.feeds.map(f=>
+    '<tr><td>'+esc(f.name)+'</td><td class="mono sub2">'+esc(f.url)+'</td>'+
+    '<td class="sub2">'+fmtAgo(f.last_sync)+(f.last_error?' <span class="badge b-bad">'+esc(f.last_error)+'</span>':"")+'</td>'+
+    '<td class="sub2">'+(f.last_found||0)+'</td>'+
+    '<td><button class="btn ghost" onclick="delFeed('+f.id+')">删</button></td></tr>').join("")
+    || '<tr><td colspan="5" class="sub2">暂无固定资源</td></tr>';
+
+  const st = S.settings;
+  const masterOpts = S.sources.map(s=>
+    '<option value="'+s.id+'" '+((String(st.single_master)==String(s.id))?"selected":"")+'>'+
+    esc(s.name||"#"+s.id)+'</option>').join("");
+  $("#set-single_master").innerHTML =
+    '<option value="0" '+((String(st.single_master)==="0")?"selected":"")+'>自动(第一个有效源)</option>'+masterOpts;
+  $("#set-single_lives").value = st.single_lives ?? "1";
+  $("#set-single_parses").value = st.single_parses ?? "1";
+  $("#settings").innerHTML =
+    '<div><div class="k">检测间隔（分钟）</div><input type="number" id="set-interval_minutes" value="'+(st.interval_minutes||10)+'"></div>'+
+    '<div><div class="k">单次检测超时（秒）</div><input type="number" id="set-check_timeout" value="'+(st.check_timeout||12)+'"></div>'+
+    '<div><div class="k">并发数</div><input type="number" id="set-max_workers" value="'+(st.max_workers||8)+'"></div>'+
+    '<div><div class="k">合并订阅上限（条）</div><input type="number" id="set-merge_cap" value="'+(st.merge_cap||50)+'"></div>'+
+    '<div><div class="k">深度检测（抽样 jar/直播/接口）</div><select id="set-deep_check"><option value="1" '+((st.deep_check=="1")?"selected":"")+'>开</option><option value="0" '+((st.deep_check!="1")?"selected":"")+'>关</option></select></div>'+
+    '<div><div class="k">合并时包含降级源</div><select id="set-include_degraded"><option value="0" '+((st.include_degraded!="1")?"selected":"")+'>否</option><option value="1" '+((st.include_degraded=="1")?"selected":"")+'>是</option></select></div>'+
+    '<div style="align-self:end"><button class="btn" id="btn-save-set">保存设置</button></div>';
+  $("#btn-save-set").onclick = saveSettings;
+
+  $("#logs").innerHTML = S.logs.map(l=>
+    '<div class="'+l.level+'">'+fmtAgo(l.ts)+' ['+l.level+'] '+esc(l.msg)+'</div>').join("")
+    || '<div class="sub2">暂无日志</div>';
+
+  const base = location.origin;
+  $("#merged-url").value = base + "/api/subscribe/merged" + ($("#merged-kind").value ? "?kind="+$("#merged-kind").value : "");
+  $("#single-url").value = base + "/api/subscribe/tvbox";
+  // 合并源计数(按当前范围)
+  const kind = $("#merged-kind").value;
+  const cnt = srcs.filter(s=>s.enabled && !s.degraded && s.last_ok===1 &&
+    (!kind || s.kind===kind)).length;
+  $("#merged-count").textContent = cnt + " 条将进入订阅";
+}
+function esc(s){return String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+
+async function refresh(){
+  S = await api("/api/state");
+  render();
+}
+async function checkOne(id){
+  await api("/api/sources/"+id+"/check","POST");
+  await refresh();
+}
+async function toggle(id,en){
+  await api("/api/sources/"+id,"PUT",{enabled:en});
+  await refresh();
+}
+async function del(id){
+  if(!confirm("删除该源及其检测历史？")) return;
+  await api("/api/sources/"+id,"DELETE");
+  await refresh();
+}
+async function delFeed(id){
+  await api("/api/feeds/"+id,"DELETE");
+  await refresh();
+}
+async function saveSettings(){
+  const body = {};
+  for(const el of document.querySelectorAll("[id^=set-]")){
+    body[el.id.slice(4)] = el.value;
+  }
+  await api("/api/settings","POST",body);
+  await refresh();
+}
+async function move(id, dir){
+  await api("/api/sources/"+id+"/move","POST",{dir});
+  await refresh();
+}
+async function override(id, ok){
+  await api("/api/sources/"+id+"/override","POST",{ok});
+  await refresh();
+}
+
+$("#btn-check").onclick = async ()=>{
+  $("#btn-check").disabled = true; $("#btn-check").textContent = "检测中…";
+  $("#net-tip").textContent = "";
+  let r = null;
+  try{ r = await api("/api/check-all","POST"); }catch(e){}
+  await refresh();
+  if(r && r.unreachable) $("#net-tip").textContent = "⚠ 本轮 "+r.unreachable+" 条本机不可达，未计失败（不影响订阅）";
+  $("#btn-check").disabled = false; $("#btn-check").textContent = "立即检测全部";
+};
+$("#btn-sync").onclick = async ()=>{ await api("/api/feeds/sync","POST"); await refresh(); };
+$("#btn-add").onclick = async ()=>{
+  const url = $("#in-url").value.trim();
+  if(!url) return alert("填地址");
+  await api("/api/sources","POST",{name:$("#in-name").value.trim(),url});
+  $("#in-url").value = ""; $("#in-name").value = "";
+  await refresh();
+};
+$("#btn-feed").onclick = async ()=>{
+  const url = $("#feed-url").value.trim();
+  if(!url) return alert("填地址");
+  await api("/api/feeds","POST",{url});  // 若后端无此路由则忽略
+  await refresh();
+};
+$("#btn-copy").onclick = ()=>{
+  $("#merged-url").select();
+  document.execCommand("copy");
+  $("#btn-copy").textContent = "已复制";
+  setTimeout(()=>$("#btn-copy").textContent="复制",1200);
+};
+$("#btn-copy2").onclick = ()=>{
+  $("#single-url").select();
+  document.execCommand("copy");
+  $("#btn-copy2").textContent = "已复制";
+  setTimeout(()=>$("#btn-copy2").textContent="复制",1200);
+};
+$("#merged-kind").onchange = render;
+$("#btn-single-stats").onclick = async ()=>{
+  await api("/api/settings","POST",{
+    single_master: $("#set-single_master").value,
+    single_lives: $("#set-single_lives").value,
+    single_parses: $("#set-single_parses").value});
+  const st = await api("/api/subscribe/tvbox/stats");
+  $("#single-stats").textContent = st.error ? ("⚠ "+st.error) :
+    ("主源 "+st.master+" · jar "+st.jar+" · 点播 "+st.sites+" · 直播 "+st.lives+
+     " · 解析 "+st.parses+" · 丢弃csp "+st.dropped_csp+" · 重复key "+st.dup_keys+
+     " · 跳过源 "+st.skipped_sources);
+};
+document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>{
+  document.querySelectorAll(".tabs button").forEach(x=>x.classList.remove("on"));
+  b.classList.add("on"); filter = b.dataset.f; render();
+});
+
+refresh();
+setInterval(refresh, 15000);
+</script>
+</body>
+</html>
