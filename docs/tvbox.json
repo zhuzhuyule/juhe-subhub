@@ -612,6 +612,20 @@
    "changeable": 0
   },
   {
+   "key": "儿童",
+   "name": "📚┃儿童┃启蒙",
+   "type": 3,
+   "api": "http://肥猫.net/api/drpy2.min.js",
+   "searchable": 0,
+   "quickSearch": 0,
+   "changeable": 0,
+   "style": {
+    "type": "rect",
+    "ratio": 1.597
+   },
+   "ext": "http://肥猫.net/js/兔小贝.js"
+  },
+  {
    "key": "drpy_js_豆瓣",
    "name": "🔥聚玩盒子4K",
    "type": 3,
