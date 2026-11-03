@@ -1,9 +1,9 @@
 {
- "spider": "https://xiuxiu-pro-new.meitudata.com/posters/c2759c9c03b22f2242475139110972c7.jpg",
+ "spider": "https://xiuxiu-pro-new.meitudata.com/posters/5d1f9c9e4d99c85337af94b57afc12da.jpg",
  "sites": [
   {
    "key": "点我切源",
-   "name": "豆豆┃片单<修复所有>",
+   "name": "豆豆┃片单",
    "type": 3,
    "api": "csp_DouDouGuard",
    "indexs": 1,
@@ -825,7 +825,7 @@
    "ext": "https://github.moeyy.xyz/raw.githubusercontent.com/gaotianliuyun/gao/master/js/310直播.js"
   },
   {
-   "api": "http://ys.cxkjg.cn/api/provide/vod",
+   "api": "https://ys.cxkjg.cn/api/provide/vod",
    "filterable": 1,
    "key": "创享影视",
    "name": "🌟 创享影视",
@@ -834,7 +834,7 @@
    "type": 1
   },
   {
-   "api": "http://ys.cxkjg.cn/api/provide/vod?source=2680151544",
+   "api": "https://ys.cxkjg.cn/api/provide/vod?source=2680151544",
    "filterable": 1,
    "key": "source_2680151544",
    "name": "📡 金鹰",
@@ -843,7 +843,7 @@
    "type": 1
   },
   {
-   "api": "http://ys.cxkjg.cn/api/provide/vod?source=3848762792",
+   "api": "https://ys.cxkjg.cn/api/provide/vod?source=3848762792",
    "filterable": 1,
    "key": "source_3848762792",
    "name": "📡 闪电",
@@ -852,7 +852,7 @@
    "type": 1
   },
   {
-   "api": "http://ys.cxkjg.cn/api/provide/vod?source=1840804598",
+   "api": "https://ys.cxkjg.cn/api/provide/vod?source=1840804598",
    "filterable": 1,
    "key": "source_1840804598",
    "name": "📡 非凡",
@@ -861,7 +861,7 @@
    "type": 1
   },
   {
-   "api": "http://ys.cxkjg.cn/api/provide/vod?source=1470828922",
+   "api": "https://ys.cxkjg.cn/api/provide/vod?source=1470828922",
    "filterable": 1,
    "key": "source_1470828922",
    "name": "📡 量子",
@@ -870,7 +870,7 @@
    "type": 1
   },
   {
-   "api": "http://ys.cxkjg.cn/api/provide/vod?source=4118858385",
+   "api": "https://ys.cxkjg.cn/api/provide/vod?source=4118858385",
    "filterable": 1,
    "key": "source_4118858385",
    "name": "📡 WS",
@@ -879,7 +879,7 @@
    "type": 1
   },
   {
-   "api": "http://ys.cxkjg.cn/api/provide/vod?source=1016684692",
+   "api": "https://ys.cxkjg.cn/api/provide/vod?source=1016684692",
    "filterable": 1,
    "key": "source_1016684692",
    "name": "📡 速博",
@@ -888,7 +888,7 @@
    "type": 1
   },
   {
-   "api": "http://ys.cxkjg.cn/api/provide/vod?source=1208629981",
+   "api": "https://ys.cxkjg.cn/api/provide/vod?source=1208629981",
    "filterable": 1,
    "key": "source_1208629981",
    "name": "📡 HD(SN)",
@@ -897,7 +897,7 @@
    "type": 1
   },
   {
-   "api": "http://ys.cxkjg.cn/api/provide/vod?source=2761253814",
+   "api": "https://ys.cxkjg.cn/api/provide/vod?source=2761253814",
    "filterable": 1,
    "key": "source_2761253814",
    "name": "📡 红牛",
@@ -906,7 +906,7 @@
    "type": 1
   },
   {
-   "api": "http://ys.cxkjg.cn/api/provide/vod?source=4194624554",
+   "api": "https://ys.cxkjg.cn/api/provide/vod?source=4194624554",
    "filterable": 1,
    "key": "source_4194624554",
    "name": "📡 U酷",
@@ -915,7 +915,7 @@
    "type": 1
   },
   {
-   "api": "http://ys.cxkjg.cn/api/provide/vod?source=4247318859",
+   "api": "https://ys.cxkjg.cn/api/provide/vod?source=4247318859",
    "filterable": 1,
    "key": "source_4247318859",
    "name": "📡 光速",
@@ -924,7 +924,7 @@
    "type": 1
   },
   {
-   "api": "http://ys.cxkjg.cn/api/provide/vod?source=531717376",
+   "api": "https://ys.cxkjg.cn/api/provide/vod?source=531717376",
    "filterable": 1,
    "key": "source_531717376",
    "name": "📡 樱花",
@@ -3512,7 +3512,7 @@
   {
    "name": "Gather「果」",
    "type": 3,
-   "url": "https://tv.tmxk.kdns.fr/yplrnuc7",
+   "url": "https://down.nigx.cn/raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u",
    "epg": "https://material.1989.click/epg.xml.gz",
    "ua": "okhttp/3.8.1",
    "timeout": 10,
