@@ -3538,18 +3538,18 @@
   {
    "name": "平台直播",
    "type": 0,
-   "url": "http://47.120.41.246:8025/vip/jar/zb.php",
+   "url": "http://124.71.19.220/live/1/0?v=1794247117",
    "playerType": 1
   },
   {
    "name": "Guovin",
    "type": 0,
-   "url": "https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/output/result.m3u"
+   "url": "http://124.71.19.220/live/1/1?v=1794247117"
   },
   {
    "name": "港澳台",
    "type": 0,
-   "url": "http://rihou.cc:567/gggg.nzk",
+   "url": "http://124.71.19.220/live/1/2?v=1794247117",
    "playerType": 1
   },
   {

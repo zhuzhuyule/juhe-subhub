@@ -1,7 +1,7 @@
 {
- "generated_at": 1794169398,
- "generated_at_str": "2026-11-08 20:23:18",
- "elapsed_sec": 139.4,
+ "generated_at": 1794269234,
+ "generated_at_str": "2026-11-10 00:07:14",
+ "elapsed_sec": 132.3,
  "deep": true,
  "stats": {
   "total": 26,
@@ -13,7 +13,7 @@
   "merged_manual": 20,
   "sites": 223,
   "lives": 62,
-  "playable": 4
+  "playable": 6
  },
  "tvbox_stats": {
   "master": "饭太硬备用 #2",
@@ -21,7 +21,7 @@
   "sites": 223,
   "lives": 62,
   "parses": 166,
-  "dropped_csp": 901,
+  "dropped_csp": 904,
   "dup_keys": 189,
   "skipped_sources": 4,
   "master_tried": [
@@ -40,7 +40,7 @@
    "enabled": true,
    "user_ok": true,
    "last_ok": 1,
-   "last_ts": 1794169358,
+   "last_ts": 1794269195,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
    "fail_streak": 0,
@@ -48,12 +48,13 @@
    "sites": 48,
    "lives": 6,
    "jar": "937f5abf1c7c4ff2f170",
-   "ms": 3820,
+   "ms": 2719,
    "play": {
     "ok": null,
     "note": "未能离机验证(抽 3 站均非可探点播接口): 📚儿童┃启蒙=非点播接口; 🐯虎牙┃直播=非点播接口; 🐟斗鱼┃直播=非点播接口"
    },
    "spark": [
+    1,
     1,
     1,
     1,
@@ -97,7 +98,7 @@
    "enabled": true,
    "user_ok": true,
    "last_ok": 1,
-   "last_ts": 1794169358,
+   "last_ts": 1794269195,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
    "fail_streak": 0,
@@ -105,12 +106,13 @@
    "sites": 48,
    "lives": 6,
    "jar": "937f5abf1c7c4ff2f170",
-   "ms": 3478,
+   "ms": 2240,
    "play": {
     "ok": null,
     "note": "未能离机验证(抽 3 站均非可探点播接口): 📚儿童┃启蒙=非点播接口; 🐯虎牙┃直播=非点播接口; 🐟斗鱼┃直播=非点播接口"
    },
    "spark": [
+    1,
     1,
     1,
     1,
@@ -154,15 +156,15 @@
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "last_ts": 1794169358,
+   "last_ts": 1794269195,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
    "fail_streak": 0,
    "degraded": false,
-   "sites": 104,
+   "sites": 107,
    "lives": 1,
-   "jar": "862321224_2_17937293",
-   "ms": 4406,
+   "jar": "654477805_4_17941973",
+   "ms": 5007,
    "play": {
     "ok": null,
     "note": "无可离机探测站点(全部依赖 jar, 需 App 内验)"
@@ -212,7 +214,7 @@
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "last_ts": 1794169358,
+   "last_ts": 1794269195,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
    "fail_streak": 0,
@@ -220,7 +222,7 @@
    "sites": 100,
    "lives": 2,
    "jar": "99191348af7606ed51e6",
-   "ms": 2668,
+   "ms": 2952,
    "play": {
     "ok": null,
     "note": "无可离机探测站点(全部依赖 jar, 需 App 内验)"
@@ -270,7 +272,7 @@
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "last_ts": 1794169358,
+   "last_ts": 1794269195,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
    "fail_streak": 0,
@@ -278,7 +280,7 @@
    "sites": 41,
    "lives": 1,
    "jar": "6a396-4e09c48e-c9bc-",
-   "ms": 3507,
+   "ms": 3519,
    "play": {
     "ok": null,
     "note": "未能离机验证(抽 1 站均非可探点播接口): 📚┃儿童┃启=接口404"
@@ -328,7 +330,7 @@
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "last_ts": 1794169358,
+   "last_ts": 1794269195,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
    "fail_streak": 0,
@@ -336,12 +338,12 @@
    "sites": 53,
    "lives": 2,
    "jar": "fan.txt",
-   "ms": 2877,
+   "ms": 3141,
    "play": {
     "ok": true,
     "site": "🎥┃豪华┃资源",
-    "title": "警察世家：波士顿第二季",
-    "media": "https://play.hhuus.com/play/dJ6YKwKd/index.m3u8",
+    "title": "谷雨",
+    "media": "https://play.hhuus.com/play/azpBr9qd/index.m3u8",
     "note": "流: h264,video,aac,audio,h264,video"
    },
    "spark": [
@@ -389,7 +391,7 @@
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "last_ts": 1794169358,
+   "last_ts": 1794269195,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
    "fail_streak": 0,
@@ -397,12 +399,12 @@
    "sites": 12,
    "lives": 0,
    "jar": "-",
-   "ms": 5203,
+   "ms": 7488,
    "play": {
     "ok": true,
     "site": "🌟 创享影视",
-    "title": "网黄之路第二季",
-    "media": "https://hd.kuktxu.com/play/e0R2Q3Lb/index.m3u8",
+    "title": "爱情来了",
+    "media": "https://hd.kuktxu.com/play/bkRrkVYa/index.m3u8",
     "note": "流: h264,video,aac,audio,h264,video"
    },
    "spark": [
@@ -449,7 +451,7 @@
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "last_ts": 1794169358,
+   "last_ts": 1794269195,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
    "fail_streak": 0,
@@ -457,10 +459,13 @@
    "sites": 37,
    "lives": 3,
    "jar": "spider.jar?g=none&v=",
-   "ms": 10093,
+   "ms": 8592,
    "play": {
-    "ok": false,
-    "note": "取到播放地址但拉不动: 🍀┃非凡┃资=媒体403; 🍀┃如意┃资=媒体403"
+    "ok": true,
+    "site": "🍀┃非凡┃资源",
+    "title": "暑假",
+    "media": "https://vod.ffzy-bofang.com/20261027/4280_55603a5f/index.m3u8",
+    "note": "流: h264,video,aac,audio,h264,video"
    },
    "spark": [
     1,
@@ -507,7 +512,7 @@
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "last_ts": 1794169358,
+   "last_ts": 1794269195,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
    "fail_streak": 0,
@@ -515,10 +520,10 @@
    "sites": 234,
    "lives": 3,
    "jar": "fty.jar",
-   "ms": 1091,
+   "ms": 891,
    "play": {
     "ok": false,
-    "note": "取到播放地址但拉不动: 🐉┃索尼┃高=媒体403; 🥗┃非凡┃资=媒体403; 🥑┃量子┃资=媒体404"
+    "note": "取到播放地址但拉不动: 🐉┃索尼┃高=媒体403; 🥑┃量子┃资=媒体404; 🎏百度┃采集=媒体403"
    },
    "spark": [
     1,
@@ -565,7 +570,7 @@
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "last_ts": 1794169358,
+   "last_ts": 1794269195,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
    "fail_streak": 0,
@@ -573,7 +578,7 @@
    "sites": 62,
    "lives": 10,
    "jar": "x.jpg",
-   "ms": 14470,
+   "ms": 7838,
    "play": {
     "ok": false,
     "note": "取到播放地址但拉不动: 影视 | 电=媒体403; 影视 | 天=媒体ERR:RemoteDisconnected; 影视 | 量=媒体404"
@@ -623,7 +628,7 @@
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "last_ts": 1794169358,
+   "last_ts": 1794269195,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
    "fail_streak": 0,
@@ -631,7 +636,7 @@
    "sites": 54,
    "lives": 1,
    "jar": "Yoursmile.jar",
-   "ms": 1309,
+   "ms": 1665,
    "play": {
     "ok": null,
     "note": "未能离机验证(抽 4 站均非可探点播接口): 🐯虎牙直播=非点播接口; 🐠斗鱼直播=非点播接口; 有声小说吧=非点播接口"
@@ -681,7 +686,7 @@
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "last_ts": 1794169358,
+   "last_ts": 1794269195,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
    "fail_streak": 0,
@@ -689,7 +694,7 @@
    "sites": null,
    "lives": null,
    "jar": "-",
-   "ms": 281,
+   "ms": 286,
    "play": {
     "ok": null,
     "note": "无可离机探测站点(全部依赖 jar, 需 App 内验)"
@@ -739,7 +744,7 @@
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "last_ts": 1794169358,
+   "last_ts": 1794269195,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
    "fail_streak": 0,
@@ -747,7 +752,7 @@
    "sites": null,
    "lives": null,
    "jar": "-",
-   "ms": 430,
+   "ms": 534,
    "play": {
     "ok": null,
     "note": "无可离机探测站点(全部依赖 jar, 需 App 内验)"
@@ -759,8 +764,8 @@
     1,
     1,
     1,
-    1,
     0,
+    1,
     1,
     1,
     1,
@@ -797,7 +802,7 @@
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "last_ts": 1794169358,
+   "last_ts": 1794269195,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
    "fail_streak": 0,
@@ -805,7 +810,7 @@
    "sites": null,
    "lives": null,
    "jar": "-",
-   "ms": 1672,
+   "ms": 1939,
    "play": {
     "ok": null,
     "note": "无可离机探测站点(全部依赖 jar, 需 App 内验)"
@@ -855,7 +860,7 @@
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "last_ts": 1794169358,
+   "last_ts": 1794269195,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
    "fail_streak": 0,
@@ -863,12 +868,12 @@
    "sites": 151,
    "lives": 1,
    "jar": "HeChengChaXiu.jar",
-   "ms": 961,
+   "ms": 757,
    "play": {
     "ok": true,
-    "site": "❤红牛资源",
-    "title": "警察世家：波士顿第二季",
-    "media": "https://hn.bfvvs.com/play/dBB8X0Qd/index.m3u8",
+    "site": "❤非凡资源",
+    "title": "暑假",
+    "media": "https://vod.ffzy-bofang.com/20261027/4280_55603a5f/index.m3u8",
     "note": "流: h264,video,aac,audio,h264,video"
    },
    "spark": [
@@ -916,7 +921,7 @@
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "last_ts": 1794169358,
+   "last_ts": 1794269195,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
    "fail_streak": 0,
@@ -924,10 +929,13 @@
    "sites": 33,
    "lives": 0,
    "jar": "custom_spider.jar",
-   "ms": 1370,
+   "ms": 1688,
    "play": {
-    "ok": false,
-    "note": "取到播放地址但拉不动: 暴風=媒体404; 索尼 =媒体403; 量子=媒体404"
+    "ok": true,
+    "site": "暴風",
+    "title": "新人教练金软景2",
+    "media": "https://v.fengbao14.com/video/xinrenjiaolianjinruanjing2/c3127ee7a3ab/index.m3u8",
+    "note": "流: h264,video,aac,audio,h264,video"
    },
    "spark": [
     1,
@@ -974,7 +982,7 @@
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "last_ts": 1794169358,
+   "last_ts": 1794269195,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
    "fail_streak": 0,
@@ -982,7 +990,7 @@
    "sites": 298,
    "lives": 2,
    "jar": "pg.jar",
-   "ms": 1532,
+   "ms": 1091,
    "play": {
     "ok": null,
     "note": "无可离机探测站点(全部依赖 jar, 需 App 内验)"
@@ -1032,7 +1040,7 @@
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "last_ts": 1794169358,
+   "last_ts": 1794269195,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
    "fail_streak": 0,
@@ -1040,7 +1048,7 @@
    "sites": 49,
    "lives": 2,
    "jar": "XYQ.jar",
-   "ms": 1195,
+   "ms": 673,
    "play": {
     "ok": null,
     "note": "未能离机验证(抽 7 站均非可探点播接口): 奇珍异兽[j=非点播接口; 优酷[js]=非点播接口; 腾云驾雾[j=非点播接口"
@@ -1090,7 +1098,7 @@
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "last_ts": 1794169358,
+   "last_ts": 1794269195,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
    "fail_streak": 0,
@@ -1098,7 +1106,7 @@
    "sites": 64,
    "lives": 1,
    "jar": "candymuj.jar",
-   "ms": 1290,
+   "ms": 1513,
    "play": {
     "ok": null,
     "note": "未能离机验证(抽 12 站均非可探点播接口): 💥短剧网=非点播接口; 💥爱看=非点播接口; 💥厂长=非点播接口"
@@ -1148,7 +1156,7 @@
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "last_ts": 1794169358,
+   "last_ts": 1794269195,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
    "fail_streak": 0,
@@ -1156,7 +1164,7 @@
    "sites": 91,
    "lives": 1,
    "jar": "Yoursmile.jar",
-   "ms": 1439,
+   "ms": 2231,
    "play": {
     "ok": null,
     "note": "未能离机验证(抽 1 站均非可探点播接口): 📚酷我听书=非点播接口"
@@ -1206,7 +1214,7 @@
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "last_ts": 1794169358,
+   "last_ts": 1794269195,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
    "fail_streak": 0,
@@ -1214,12 +1222,12 @@
    "sites": 101,
    "lives": 17,
    "jar": "xs.jar",
-   "ms": 1319,
+   "ms": 1676,
    "play": {
     "ok": true,
     "site": "360 | 采集",
-    "title": "爱的三次方",
-    "media": "https://vod1.maowushi.com/20260817/1k9eHgvU/index.m3u8",
+    "title": "田园恋曲",
+    "media": "https://vod1.maowushi.com/20261109/8pcoYh0f/index.m3u8",
     "note": "流: h264,video,aac,audio,h264,video"
    },
    "spark": [
@@ -1267,7 +1275,7 @@
    "enabled": true,
    "user_ok": false,
    "last_ok": 1,
-   "last_ts": 1794169358,
+   "last_ts": 1794269195,
    "last_verdict": "✓ 有效",
    "last_unreachable": false,
    "fail_streak": 0,
@@ -1275,7 +1283,7 @@
    "sites": 48,
    "lives": 3,
    "jar": "custom_spider.jar",
-   "ms": 1161,
+   "ms": 1234,
    "play": {
     "ok": null,
     "note": "未能离机验证(抽 9 站均非可探点播接口): 🍊柚子资源=非点播接口; 奇珍异兽[j=非点播接口; 优酷[js]=非点播接口"
@@ -1325,7 +1333,7 @@
    "enabled": true,
    "user_ok": false,
    "last_ok": null,
-   "last_ts": 1794169358,
+   "last_ts": 1794269195,
    "last_verdict": "⚠ 本机不可达(URLError)",
    "last_unreachable": true,
    "fail_streak": 0,
@@ -1344,16 +1352,17 @@
    "enabled": true,
    "user_ok": false,
    "last_ok": 0,
-   "last_ts": 1794169358,
+   "last_ts": 1794269195,
    "last_verdict": "✗ 失效(HTTP 403)",
    "last_unreachable": false,
-   "fail_streak": 24,
+   "fail_streak": 25,
    "degraded": true,
    "sites": null,
    "lives": null,
    "jar": "-",
-   "ms": 658,
+   "ms": 1362,
    "spark": [
+    0,
     0,
     0,
     0,
@@ -1392,15 +1401,15 @@
    "enabled": true,
    "user_ok": false,
    "last_ok": 0,
-   "last_ts": 1794169358,
+   "last_ts": 1794269195,
    "last_verdict": "✗ 失效(HTTP 404)",
    "last_unreachable": false,
-   "fail_streak": 35,
+   "fail_streak": 36,
    "degraded": true,
    "sites": null,
    "lives": null,
    "jar": "-",
-   "ms": 740,
+   "ms": 580,
    "spark": [
     0,
     0,
@@ -1446,10 +1455,10 @@
    "enabled": true,
    "user_ok": false,
    "last_ok": 0,
-   "last_ts": 1794169358,
+   "last_ts": 1794269195,
    "last_verdict": "✗ 失效(HTTP 456)",
    "last_unreachable": false,
-   "fail_streak": 22,
+   "fail_streak": 23,
    "degraded": true,
    "sites": null,
    "lives": null,
@@ -1462,12 +1471,12 @@
    "spark": [
     1,
     1,
-    1,
     0,
     0,
     1,
     1,
     1,
+    0,
     0,
     0,
     0,
@@ -1491,16 +1500,10 @@
     0,
     0
    ],
-   "uptime": 20
+   "uptime": 17
   }
  ],
  "history": [
-  {
-   "ts": 1792305446,
-   "ok": 21,
-   "total": 26,
-   "unreachable": 2
-  },
   {
    "ts": 1792321313,
    "ok": 23,
@@ -1671,6 +1674,12 @@
   },
   {
    "ts": 1794169374,
+   "ok": 22,
+   "total": 26,
+   "unreachable": 1
+  },
+  {
+   "ts": 1794269207,
    "ok": 22,
    "total": 26,
    "unreachable": 1
