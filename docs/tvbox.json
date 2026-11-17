@@ -1,5 +1,5 @@
 {
- "spider": "https://xiuxiu-pro-new.meitudata.com/posters/9970bc4b67aa7d907871548db1c31bba.jpg",
+ "spider": "https://xiuxiu-pro-new.meitudata.com/posters/4dce101b32670f77664cd0f13f1a78b6.jpg",
  "sites": [
   {
    "key": "点我切源",
@@ -946,24 +946,6 @@
    "name": "🍀┃非凡┃资源",
    "type": 1,
    "api": "http://ffzy5.tv/api.php/provide/vod",
-   "searchable": 1,
-   "quickSearch": 1,
-   "filterable": 1,
-   "categories": [
-    "韩国剧",
-    "欧美剧",
-    "台湾剧",
-    "战争片",
-    "国产剧",
-    "大陆综艺"
-   ],
-   "hide": 1
-  },
-  {
-   "key": "ruyi",
-   "name": "🍀┃如意┃资源",
-   "type": 1,
-   "api": "https://cj.rycjapi.com/api.php/provide/vod",
    "searchable": 1,
    "quickSearch": 1,
    "filterable": 1,
@@ -3457,11 +3439,6 @@
    "playerType": 2
   },
   {
-   "name": "牛播一",
-   "url": "http://127.0.0.1:9978/proxy?do=cctva",
-   "timeZone": "Asia/Shanghai"
-  },
-  {
    "name": "Kimentanm",
    "type": 0,
    "url": "https://ghproxy.net/https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u",
@@ -3503,11 +3480,6 @@
    "url": "http://193.123.86.190:14888/TV/iptv.php",
    "ua": "bingcha/1.1 (mianfeifenxiang)",
    "playerType": 2
-  },
-  {
-   "name": "牛播一",
-   "url": "http://127.0.0.1:9978/proxy?do=cctva",
-   "timeZone": "Asia/Shanghai"
   },
   {
    "name": "Kimentanm",
@@ -3584,18 +3556,18 @@
   {
    "name": "平台直播",
    "type": 0,
-   "url": "http://124.71.19.220/live/1/0?v=1794633001",
+   "url": "http://124.71.19.220/live/1/0?v=1794848265",
    "playerType": 1
   },
   {
    "name": "Guovin",
    "type": 0,
-   "url": "http://124.71.19.220/live/1/1?v=1794633001"
+   "url": "http://124.71.19.220/live/1/1?v=1794848265"
   },
   {
    "name": "港澳台",
    "type": 0,
-   "url": "http://124.71.19.220/live/1/2?v=1794633001",
+   "url": "http://124.71.19.220/live/1/2?v=1794848265",
    "playerType": 1
   },
   {
