@@ -3469,6 +3469,12 @@
    "ua": "okHttp/Mod-1.5.0.0"
   },
   {
+   "name": "superiptv",
+   "type": 0,
+   "url": "http://127.0.0.1:5266/iptv.m3u",
+   "playerType": 2
+  },
+  {
    "name": "综合",
    "type": 0,
    "url": "http://193.123.86.190:14888/TV/iptv.php",
