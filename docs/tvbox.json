@@ -1,9 +1,9 @@
 {
- "spider": "https://xiuxiu-pro-new.meitudata.com/posters/b22fd2d677a89337d8733fc1d3f2a581.jpg",
+ "spider": "https://xiuxiu-pro-new.meitudata.com/posters/6ab5e75b83570d4213bdbbddca1b4c2a.jpg",
  "sites": [
   {
    "key": "点我切源",
-   "name": "豆豆┃片单 <修复扫码Bug>",
+   "name": "豆豆┃片单 <修复扫码BUG>",
    "type": 3,
    "api": "csp_DouDouGuard",
    "indexs": 1,
