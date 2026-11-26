@@ -206,5 +206,13 @@
   "kind": "feed",
   "origin": "noimank聚合",
   "added_at": null
+ },
+ {
+  "id": 35,
+  "name": "🚀4-星光影库",
+  "url": "https://xkykmovie.com/api/maccms",
+  "kind": "feed",
+  "origin": "noimank聚合",
+  "added_at": 1795651668
  }
 ]
